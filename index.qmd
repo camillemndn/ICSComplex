@@ -1,0 +1,142 @@
+---
+keywords:
+  - Bayes spaces
+  - Distributional data
+  - Extreme weather
+  - Functional data
+  - Invariant coordinate selection
+  - Outlier detection
+  - Temperature distribution
+  - 62H25
+  - 62R10
+  - 62G07
+  - 65D07
+---
+
+# Introduction
+
+The invariant coordinate selection (ICS) method was introduced in a
+multivariate data analysis framework by @tyler_invariant_2009. ICS is
+one of the dimension reduction methods that extend beyond Principal
+Component Analysis (PCA) and second moments. ICS seeks projection
+directions associated with the largest and/or smallest eigenvalues of
+the simultaneous diagonalisation of two scatter matrices [see
+@loperfido_theoretical_2021; @nordhausen_usage_2022 for recent
+references]. This approach enables ICS to uncover underlying structures,
+such as outliers and clusters, that might be hidden in high-dimensional
+spaces. ICS is termed "invariant" because it produces components,
+linear combinations of the original features of the data, that remain
+invariant (up to their sign and some permutation) under affine
+transformations of the data, including translations, rotations and
+scaling. Moreover, Theorem 4 in [@tyler_invariant_2009] demonstrates
+that, for a mixture of elliptical distributions, the projection
+directions of ICS associated with the largest or smallest eigenvalues
+usually generate the Fisher discriminant subspace, regardless of the
+chosen pair of scatter matrices and without prior knowledge of group
+assignments. Once the pair of scatter matrices is chosen, invariant
+components can be readily computed, and dimension reduction is achieved
+by selecting the components that reveal the underlying structure. Recent
+articles have examined in detail the implementation of ICS in a
+multivariate framework, focusing on objectives such as anomaly detection
+[@archimbaud_ics_2018] or clustering [@alfons_tandem_2024]. These
+studies particularly address the choice of pairs of scatter matrices and
+the selection of relevant invariant components. Note that this idea of
+joint diagonalisation of scatter matrices is also used in the context of
+blind source separation and more precisely for Independent Component
+Analysis (ICA) which is a model-based approach as opposed to ICS [see
+@nordhausen_usage_2022 for more details]. ICS has later been adapted to
+more complex data, namely compositional data
+[@ruiz-gazen_detecting_2023], functional data
+[@rendon_aguirre_clustering_2017; @li_functional_2021 for ICA] and
+multivariate functional data
+[@archimbaud_ics_2022; @virta_independent_2020 for ICA].
+
+A significant contribution of the present work is the formulation of a
+coordinate-free variant of ICS, considering data objects in an abstract
+Euclidean space, without having to choose a specific basis. This
+formulation allows ICS to be consistently defined in a very general
+framework, unifying its original definition for multivariate data and
+its past adaptations to specific types of complex data. In the case of
+compositional data, the coordinate-free approach yields an alternative
+implementation of ICS that is more computationally efficient. We are
+also able to propose a new version of invariant coordinate selection
+adapted to distributional data. Note that a coordinate-free version of
+ICS has already been mentioned in [@tyler_invariant_2009], in the
+discussion by Mervyn Stone, who proposed to follow the approach of
+@stone_coordinate-free_1987. In their response, Tyler and co-authors
+agree that this could offer a theoretically elegant and concise view of
+the topic. A coordinate-free approach of ICA is proposed by
+@li_functional_2021, but to our knowledge, no coordinate-free approach
+to ICS exists for a general Euclidean space.
+
+As mentioned above, a possible application of ICS is outlier detection.
+In the context of a small proportion of outliers, a complete detection
+procedure integrating a dimension reduction step based on the selection
+of invariant coordinates is described by @archimbaud_ics_2018. This
+method, called ICSOutlier, flags outlying observations and has been
+implemented for multivariate data by @nordhausen_icsoutlier_2023. It has
+been adapted to compositional data by @ruiz-gazen_detecting_2023 and to
+multivariate functional data by @archimbaud_ics_2022. We propose to
+extend this detection procedure to complex data and illustrate it on
+distributional data.
+
+Detecting outliers is already challenging in a classical multivariate
+context because outliers may differ from the other observations in their
+correlation pattern [see @aggarwal_outlier_2017 for an overview on
+outlier detection and analysis]. @archimbaud_ics_2018 demonstrate how
+the ICS procedure outperforms those based on the Mahalanobis distance
+and PCA (robust or not). For compositional data, the constraints of
+positivity and constant sum of coordinates must be taken into account as
+detailed in [@ruiz-gazen_detecting_2023] and further examined in this
+paper. For univariate functional data, outliers are categorised as
+either magnitude or shape outliers, with shape outliers being more
+challenging to detect because they are hidden among the other curves.
+Many existing detection methods for functional data rely on depth
+measures, including the Mahalanobis distance [see, e.g., the recent
+paper @dai_functional_2020 and the included references]. Density data
+are constrained functional data, and thus combine the challenges
+associated with both compositional and functional data. The literature
+on outlier detection for density data is very sparse and recent with, as
+far as we know, the papers by @menafoglio_anomaly_2021
+[@lei_functional_2023] and @murph_visualisation_2024 only. Two types of
+outliers have been identified for density data: the horizontal-shift
+outliers and the shape outliers, with shape outliers being again more
+challenging to detect [see @lei_functional_2023 for details]. The
+procedure proposed by @menafoglio_anomaly_2021 is based on an adapted
+version of functional PCA to density objects in a control chart context.
+In order to derive a robust distribution-to-distribution regression
+method, @lei_functional_2023 propose a transformation tree approach that
+incorporates many different outlier detection methods adapted to
+densities. Their methods involve transforming density data into
+unconstrained data and using standard functional outlier detection
+methods. @murph_visualisation_2024 continue the work of the previously
+cited article by comparing more methods through simulations, and give an
+application to gas transport data. ICS is not mentioned in these
+references.
+
+Our coordinate-free definition of ICS enables direct adaptation of the
+ICSOutlier method to complex data. Through a case study on temperature
+distributions in Vietnam, we assess the impact of preprocessing
+parameters and provide practical recommendations for their selection. In
+addition, the results of a simulation study demonstrate that our method
+performs favourably compared with other approaches. An original
+application to Vietnamese data provides a detailed description of the
+various stages involved in detecting low-proportion outliers using ICS,
+as well as interpreting them from the dual eigendensities.
+
+@sec-icsfree presents ICS in a coordinate-free framework, states a useful result to
+link ICS in different spaces, and treats the specific cases of
+compositional, functional and distributional data. For the latter, we
+develop a Bayes space approach and discuss the maximum penalised
+likelihood method to preprocess the original samples of real-valued data
+into a sample of compositional splines. @sec-icscomplexout describes
+the ICS-based outlier detection procedure adapted to complex data,
+discusses the impact of the preprocessing parameters on outlier
+detection through a toy example. Simulating data from multiple
+generating schemes, we compare ICS with other outlier detection methods
+for density data. @sec-appliout provides an application of the outlier
+detection methodology to maximum temperature data in Vietnam over 30
+years. @sec-conclusion concludes the paper and offers some
+perspectives. Supplementary material on ICS, a reminder on Bayes spaces,
+as well as proofs of the propositions and corollaries are given in the
+Appendix.

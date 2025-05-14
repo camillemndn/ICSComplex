@@ -1,0 +1,134 @@
+project:
+  type: book
+  resources:
+    - images
+
+book:
+  title: ICS for complex data with application to outlier detection for density data
+  date: today
+  date-format: long
+  license: CC BY
+  author:
+    - name:
+        given: Camille
+        family: Mondon
+      url: https://camillemondon.com
+      email: camille.mondon@tse-fr.eu
+      orcid: 0009-0007-4569-990X
+      roles:
+        - conceptualization
+        - investigation
+        - writing – original draft
+      affiliations:
+        - id: tse
+          name: Toulouse School of Economics
+          department: Mathematics and Statistics
+          address: 1, Esplanade de l'Université
+          city: Toulouse
+          region: Occitanie
+          country: France
+          postal-code: 31000
+          url: https://www.tse-fr.eu/department-mathematics-and-statistics
+    - name:
+        given: Anne
+        family: Ruiz-Gazen
+      url: https://www.tse-fr.eu/fr/people/anne-ruiz-gazen
+      email: anne.ruiz-gazen@tse-fr.eu
+      orcid: 0000-0001-8970-8061
+      roles:
+        - supervision
+        - conceptualization
+        - investigation
+        - writing – original draft
+      affiliations:
+        - ref: tse
+    - name:
+        given: Christine
+        family: Thomas-Agnan
+      url: https://www.tse-fr.eu/fr/people/christine-thomas-agnan
+      email: christine.thomas@tse-fr.eu
+      orcid: 0000-0002-6430-3110
+      roles:
+        - supervision
+        - conceptualization
+        - investigation
+        - writing – original draft
+      affiliations:
+        - ref: tse
+    - name:
+        given: Huong Thi
+        family: Trinh
+      url: https://sites.google.com/tmu.edu.vn/huongtrinhthi/home
+      email: trinhthihuong@tmu.edu.vn
+      orcid: 0000-0002-5940-6588
+      roles:
+        - conceptualization
+        - investigation
+        - writing – original draft
+      affiliations:
+        - id: thuongmai
+          name: Thuongmai University
+          department: Faculty of Mathematical Economics
+          city: Hanoi
+          country: Vietnam
+          url: https://tmu.edu.vn/
+  chapters:
+    - index.qmd
+    - ics/index.qmd
+    - outlier-detection/index.qmd
+    - application/index.qmd
+    - conclusion/index.qmd
+    - acknowledgements/index.qmd
+    - appendix/index.qmd
+    - references/index.qmd
+  downloads: [pdf]
+
+lang: en
+bibliography: references/references.bib
+link-external-newwindow: true
+warning: false
+lightbox: true
+df-print: kable
+
+format:
+  html:
+    theme: cosmo
+    fig-format: svg
+    code-fold: true
+    css: styles.css
+    include-in-header:
+      text: |
+        <script defer data-domain="camillemondon.com" src="https://analytics.mondon.xyz/js/script.js"></script>
+  pdf:
+    documentclass: scrreprt
+    pdf-engine: pdflatex
+    fig-format: pdf
+    cite-method: biblatex
+    biblatexoptions:
+      - style=authoryear
+      - backend=biber
+      - backref=true
+    link-citations: true
+    colorlinks: false
+    echo: false
+    template-partials:
+      - title.tex
+    include-in-header:
+      - text: |
+          \usepackage{fourier}
+          \usepackage{fullpage}
+          \usepackage[font=small, labelfont=bf]{caption}
+          \usepackage{fvextra}
+          \usepackage[noblocks]{authblk}
+          \renewcommand*{\Authsep}{, }
+          \renewcommand*{\Authand}{, }
+          \renewcommand*{\Authands}{, }
+          \renewcommand\Affilfont{\small}
+          \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+          \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}
+          \addtokomafont{disposition}{\rmfamily}
+
+knitr:
+  opts_knit:
+    fig.align: center
+    root.dir: ./
