@@ -89,6 +89,8 @@ link-external-newwindow: true
 warning: false
 lightbox: true
 df-print: kable
+crossref:
+  chapters: false
 
 format:
   html:
@@ -127,6 +129,8 @@ format:
           \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
           \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}
           \addtokomafont{disposition}{\rmfamily}
+          \KOMAoptions{titlepage=false} % remove new page after title
+          \RedeclareSectionCommand[style=section]{chapter} % remove new pages for chapters
 
 knitr:
   opts_knit:

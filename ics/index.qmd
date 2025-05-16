@@ -239,7 +239,7 @@ two measurable functions. Let $B$ be any basis of $E$,
 $G_B = (\langle b_j, b_{j'} \rangle)_{1 \leq j,j' \leq p}$ its Gram
 matrix and $[ \cdot ]_B$ the linear map giving the coordinates in $B$.
 For any $X \in \mathcal E_{w_1} \cap \mathcal E_{w_2}$ (with the
-notations from @def-covw) = (h_1, \dots, h_p$ of $E$, and
+notations from @def-covw), any basis ${H} = (h_1, \dots, h_p$ of $E$, and
 any finite non-increasing real sequence
 $\Lambda = (\lambda_1 \geq \ldots \geq \lambda_p)$ the following
 assertions are equivalent:
@@ -252,9 +252,9 @@ assertions are equivalent:
     $\operatorname{ICS} ({G_B^{1/2}} [X]_B, \operatorname{Cov}_{w_1}, \operatorname{Cov}_{w_2})$
     in the space $\mathbb R^p$
 
-(3) [$([H]_B, \Lambda)$ solves
+(3) $([H]_B, \Lambda)$ solves
     $\operatorname{ICS} ({G_B} [X]_B, \operatorname{Cov}_{w_1}, \operatorname{Cov}_{w_2})$
-    in the space $\mathbb R^p$]{#eq-3}
+    in the space $\mathbb R^p${#eq-third}
 
 (4) $({G_B} [H]_B, \Lambda)$ solves
     $\operatorname{ICS} ([X]_B, \operatorname{Cov}_{w_1}, \operatorname{Cov}_{w_2})$
@@ -264,7 +264,7 @@ assertions are equivalent:
 the basis $([h_1]_B, \dots, [h_p]_B)$ of $\mathbb R^p$.*
 :::
 
-In practice, we prefer @eq-3 (first
+In practice, we prefer @eq-third (first
 transforming the data by the Gram matrix of the basis) because it is the
 only one that does not require inverting the Gram matrix in order to
 recover the eigenobjects. Then, the problem is reduced to multivariate

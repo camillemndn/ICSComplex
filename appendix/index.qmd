@@ -67,7 +67,7 @@ $(E, \langle {S_1}[X] \cdot, \cdot \rangle)$, because $$\begin{aligned}
 &= \langle S_1[X] S_1 [X]^{-1} S_2 [X] y, x \rangle.
 \end{aligned}$$ Thus, the spectral theorem guarantees that there exists
 an orthonormal basis $H$ of $(E, \langle {S_1}[X] \cdot, \cdot \rangle)$
-in which $S_1 [X]^{-1} S_2[X]$ is diagonal. ◻
+in which $S_1 [X]^{-1} S_2[X]$ is diagonal. 
 :::
 
 This methodology does not generalise to the infinite-dimensional case,
@@ -231,7 +231,6 @@ is well defined on $F$:
             = \varphi \circ S_\ell^{\mathcal E} [\varphi^{-1} \circ A \circ \varphi (X) + \varphi^{-1}(b)] \circ \varphi^{-1} \\
             = A \circ \varphi \circ S_\ell^{\mathcal E} [X] \circ \varphi^{-1} \circ A^*
             = A S_\ell^{\mathcal F} [\varphi(X)] A^*.
-        
     \end{gathered}$$
 
 (c) The isometry $\varphi$ preserves the linear rank of any finite
@@ -261,7 +260,7 @@ in the space $E$ if and only if $$\begin{aligned}
 \end{aligned}$$ which is equivalent to the fact that
 $(H^{\mathcal F}, \Lambda)$ solves
 $\operatorname{ICS} (X^{\mathcal F}, S_1^{\mathcal F}, S_2^{\mathcal F})$
-in the space $F$. ◻
+in the space $F$. 
 :::
 
 ::: {.proof}
@@ -271,13 +270,13 @@ Let $\ell \in \{ 1, 2 \}$ and $\tilde X = X - \mathbb EX$. In order to prove the
 $(x,y) \in F^2$, $$\begin{aligned}
     \langle \varphi \circ \operatorname{Cov}_{w_\ell}^E [X] \circ \varphi^{-1} (x), y \rangle_F
     &= \langle \operatorname{Cov}_{w_\ell}^E [X] \varphi^{-1} (x), \varphi^{-1} (y) \rangle_E \\
-    &= \mathbb E [ w_\ell (\| \operatorname{Cov}^E [X]^{-1/2} \tilde X \|_E)^2 \langle \tilde X, \varphi^{-1} (x) \rangle_E \langle \tilde X, \varphi^{-1} (y) \rangle_E ] \label{eq-cor-isometry-covw1} \\
-    &= \mathbb E [ w_\ell (\| \operatorname{Cov}^F [\varphi(X)]^{-1/2} \varphi(\tilde X) \|_F)^2 \langle \varphi(\tilde X), x \rangle_F \langle \varphi(\tilde X), y \rangle_F ]  \label{eq-cor-isometry-covw2} \\
+    &= \mathbb E [ w_\ell (\| \operatorname{Cov}^E [X]^{-1/2} \tilde X \|_E)^2 \langle \tilde X, \varphi^{-1} (x) \rangle_E \langle \tilde X, \varphi^{-1} (y) \rangle_E ] \\
+    &= \mathbb E [ w_\ell (\| \operatorname{Cov}^F [\varphi(X)]^{-1/2} \varphi(\tilde X) \|_F)^2 \langle \varphi(\tilde X), x \rangle_F \langle \varphi(\tilde X), y \rangle_F ]  \\
     \langle \varphi \circ \operatorname{Cov}_{w_\ell}^E [X] \circ \varphi^{-1} (x), y \rangle_F
     &= \langle \operatorname{Cov}_{w_\ell}^F [\varphi(X)] x, y \rangle_F.
-\end{aligned}$$ It is enough to show the equality between
-@eq-cor-isometry-covw1 and
-@eq-cor-isometry-covw2, for which we treat differently the
+\end{aligned}$${#eq-cor-isometry-covw} It is enough to show the equality between
+@eq-cor-isometry-covw (2) and
+@eq-cor-isometry-covw (3), for which we treat differently the
 cases $w_\ell = 1$ and $w_\ell \neq 1$. If $w_\ell = 1$, there is
 nothing to prove, so that the equation
 @eq-isometry-covw holds for the covariance operator. If
@@ -288,7 +287,7 @@ $$\| \operatorname{Cov}^E [X]^{-1/2} \tilde X \|_E
     = \| \operatorname{Cov}^F [\varphi(X)]^{-1/2} \varphi(\tilde X) \|_F$${#eq-isometry-mahalanobis}
 Once the equation
 @eq-isometry-covw is proved, one only needs to apply
-@prp-isometry to finish the proof. ◻
+@prp-isometry to finish the proof. 
 :::
 
 ::: {.proof}
@@ -312,15 +311,15 @@ which gives the equivalence between the assertions (1) and (2). The
 equivalence between the other assertions are deduced from the fact that
 for any $\ell \in \{ 1, 2 \}$ and any $(x,y) \in E^2$: $$\begin{aligned}
 \langle \operatorname{Cov}_{w_\ell}^E [X] x, y \rangle_E
-&=& \langle \operatorname{Cov}_{w_\ell} (G_B^{1/2} [X]_B) G_B^{1/2} [x]_B, G_B^{1/2} [y]_B \rangle_{\mathbb R^p} \label{eq-cor-coord1} \\
-&=& \langle \operatorname{Cov}_{w_\ell} (G_B [X]_B) [x]_B, [y]_B \rangle_{\mathbb R^p} \label{eq-cor-coord2} \\
-&=& \langle \operatorname{Cov}_{w_\ell} ([X]_B) G_B [x]_B, G_B [y]_B \rangle_{\mathbb R^p}, \label{eq-cor-coord3}
-\end{aligned}$$ where
-@eq-cor-coord1 comes from the equation
+&= \langle \operatorname{Cov}_{w_\ell} (G_B^{1/2} [X]_B) G_B^{1/2} [x]_B, G_B^{1/2} [y]_B \rangle_{\mathbb R^p} \\
+&= \langle \operatorname{Cov}_{w_\ell} (G_B [X]_B) [x]_B, [y]_B \rangle_{\mathbb R^p} \\
+&= \langle \operatorname{Cov}_{w_\ell} ([X]_B) G_B [x]_B, G_B [y]_B \rangle_{\mathbb R^p},
+\end{aligned}$${#eq-cor-coord} where
+@eq-cor-coord (1) comes from the equation
 @eq-isometry-covw, and the equalities
-@eq-cor-coord2 and
-@eq-cor-coord3 come from the affine equivariance of
-$\operatorname{Cov}_{w_\ell}$. ◻
+@eq-cor-coord (2) and
+@eq-cor-coord (3) come from the affine equivariance of
+$\operatorname{Cov}_{w_\ell}$. 
 :::
 
 ::: {.proof}
@@ -335,7 +334,7 @@ S_1[X]^{-1} (X - \mathbb EX)
 \end{aligned}$$ The dual basis $H^*$ of $H$ is the one that satisfies
 $\langle h_j, h^*_{j'} \rangle = \delta_{jj'}$ for all
 $1 \leq j, j' \leq p$ and we know from the definition of ICS that this
-holds for $(S_1[X] h_j)_{1 \leq j \leq p}$. ◻
+holds for $(S_1[X] h_j)_{1 \leq j \leq p}$. 
 :::
 
 ## Code & reproducibility
