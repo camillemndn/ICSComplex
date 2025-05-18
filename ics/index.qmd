@@ -156,12 +156,17 @@ $A^{1/2}$ the unique non-negative square root of a linear mapping $A$.
 ::: {#def-covw}
 # Weighted covariance operators
 For any measurable function $w: \mathbb R^+ \rightarrow \mathbb R$, let
-$$\mathcal E_w = \left\{ X \in L^2 (\Omega, E) \left| \, \operatorname{Cov}[X] \in \mathcal{GL}(E)
-\text{ and } w \left( \left\| \operatorname{Cov}[X]^{-1/2} (X - \mathbb EX) \right\| \right) \| X - \mathbb EX \| \in L^2 (\Omega, \mathbb R) \right. \right\}.$$
+$$
+\mathcal E_w = \left\{ X \in L^2 (\Omega, E) \left| \, \operatorname{Cov}[X] \in \mathcal{GL}(E) \\
+\text{ and } w \left( \left\| \operatorname{Cov}[X]^{-1/2} (X - \mathbb EX) \right\| \right) \| X - \mathbb EX \| \in L^2 (\Omega, \mathbb R) \right. \right\}.
+$${#eq-covw}
 Note that $\mathcal E_w$ is an affine invariant set of integrable
 $E$-valued random objects. For $X \in \mathcal E_w$, we define the
 $w$-weighted covariance operator $\operatorname{Cov}_w [X]$ by
-$$\forall (x,y) \in E^2, \langle \operatorname{Cov}_w [X] x, y \rangle = \mathbb E \left[ w^2 \left( \left\| \operatorname{Cov}[X]^{-1/2} (X - \mathbb EX) \right\| \right) \langle X - \mathbb EX, x \rangle \langle X - \mathbb EX, y \rangle \right].$${#eq-covw}
+$$
+\forall (x,y) \in E^2, \langle \operatorname{Cov}_w [X] x, y \rangle =
+\mathbb E \left[ w^2 \left( \left\| \operatorname{Cov}[X]^{-1/2} (X - \mathbb EX) \right\| \right) \langle X - \mathbb EX, x \rangle \langle X - \mathbb EX, y \rangle \right].
+$${#eq-covw}
 When necessary, we will also write $\operatorname{Cov}_w^E$ for the
 $w$-weighted covariance operator on $E$ to avoid any ambiguity. It is
 easy to check that weighted covariance operators are affine equivariant
@@ -239,7 +244,7 @@ two measurable functions. Let $B$ be any basis of $E$,
 $G_B = (\langle b_j, b_{j'} \rangle)_{1 \leq j,j' \leq p}$ its Gram
 matrix and $[ \cdot ]_B$ the linear map giving the coordinates in $B$.
 For any $X \in \mathcal E_{w_1} \cap \mathcal E_{w_2}$ (with the
-notations from @def-covw), any basis ${H} = (h_1, \dots, h_p$ of $E$, and
+notations from @def-covw), any basis ${H} = (h_1, \dots, h_p)$ of $E$, and
 any finite non-increasing real sequence
 $\Lambda = (\lambda_1 \geq \ldots \geq \lambda_p)$ the following
 assertions are equivalent:
@@ -264,8 +269,8 @@ assertions are equivalent:
 the basis $([h_1]_B, \dots, [h_p]_B)$ of $\mathbb R^p$.*
 :::
 
-In practice, we prefer @eq-third (first
-transforming the data by the Gram matrix of the basis) because it is the
+In practice, we prefer Assertion (3) (transforming the data by
+the Gram matrix of the basis) because it is the
 only one that does not require inverting the Gram matrix in order to
 recover the eigenobjects. Then, the problem is reduced to multivariate
 ICS, already implemented in the R package `ICS` using the QR
@@ -290,7 +295,7 @@ samples of complex random objects, we can study the particular case of a
 finite $E$-valued random object $X$ where we have a fixed sample
 $D_n=(x_1, \dots, x_n)$ and we assume that $X$ follows the empirical
 probability distribution $P_{D_n}$ of $(x_1, \dots, x_n)$. In that case,
-the expressions (in @def-covw) for instance) of the form $\mathbb E f(X$ for any
+the expressions (in @def-covw) for instance) of the form $\mathbb E f(X)$ for any
 function $f$ are discrete and equal to $\frac1n \sum_{i=1}^n f(x_i)$.
 
 Now, let us assume that we observe an i.i.d. sample
@@ -359,7 +364,7 @@ density data) is twofold: first, functions are usually analysed within
 the infinite-dimensional Hilbert space $L^2 (a,b)$, second, a random
 function is almost never observed for every argument, but rather on a
 discrete grid. This grid can be regular or irregular, deterministic or
-random, dense (the grid step goes to zero) or sparse. We describe a
+random, dense (the grid spacing goes to zero) or sparse. We describe a
 general framework for adapting coordinate-free ICS to functional data,
 solving both difficulties at the same time by smoothing the observed
 values into a random function $u$ that belongs to a Euclidean subspace
@@ -438,7 +443,7 @@ compositional splines on $(a,b)$ of order $d+1$ with knots
 $\Delta \gamma = (\gamma_1, \dots, \gamma_k)$. Note that the centred
 log-ratio transform $\operatorname{clr}$ is an isometry between $E$ and
 the space $F = \mathcal Z^{\Delta \gamma}_d (a,b)$ of zero-integral
-splines on $(a,b)$ of order $d+1$ and with knots
+splines on $(a,b)$ of order $d+1$ (degree less than or equal to $d$) and with knots
 $\Delta \gamma = (\gamma_1, \dots, \gamma_k)$. They both have dimension
 $p = k + d$.
 

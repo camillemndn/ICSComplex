@@ -1,6 +1,4 @@
-# Appendix {#sec-appendix .unnumbered}
-
-## Scatter operators for random objects in a Hilbert space
+## Scatter operators for random objects in a Hilbert space {.appendix .unnumbered}
 
 Let us first discuss some definitions relative to scatter operators in
 the framework of a Hilbert space $(E, \langle \cdot, \cdot \rangle)$. We
@@ -37,7 +35,7 @@ $\mathcal E$) if it satisfies the following two properties:
 We do not know whether there exist other scatter operators than the
 covariance when the Hilbert space has infinite dimension.
 
-## Details on coordinate-free ICS
+## Details on coordinate-free ICS {.appendix .unnumbered}
 
 The problem $\operatorname{ICS} (X, S_1, S_2)$ defined by
 @eq-icsdef is equivalent to assuming that $S_1 [X]$ is
@@ -104,7 +102,7 @@ $H^* = (h^*_j)_{1 \leq j \leq p} = ({S_1} [X] h_j)_{1 \leq j \leq p}$ is
 the dual basis of $H$.
 :::
 
-## Reminder on Bayes spaces
+## Reminder on Bayes spaces {.appendix .unnumbered}
 
 The most recent and complete description of the Bayes spaces approach
 can be found in [@van_den_boogaart_bayes_2014]. For the present work, we
@@ -170,7 +168,7 @@ follows, whenever they exist: $$\begin{aligned}
 \end{aligned}$${#eq-covw2} where $\ominus$ is the negative perturbation defined by
 $f \ominus g = f \oplus [(-1) \odot g]$.
 
-## Reminder on compositional splines
+## Reminder on compositional splines {.appendix .unnumbered}
 
 Following [@machalova_compositional_2021], in order to construct a basis
 of $E = \mathcal C^{\Delta \gamma}_d (a,b)$, which is required in
@@ -206,7 +204,7 @@ ${\cal Z}_d^{\Delta \gamma}$ can be written in a B-spline basis, see
 @schumaker_spline_1981, which is convenient to allow using existing code
 for their computation.
 
-## Proofs
+## Proofs {.appendix .unnumbered}
 
 ::: {.proof}
 # @prp-isometry
@@ -327,17 +325,17 @@ $\operatorname{Cov}_{w_\ell}$. 
 Let us decompose $S_1[X]^{-1} (X - \mathbb EX)$ over the basis $H$, which is orthonormal
 in $(E, \langle \cdot, S_1[X] \cdot \rangle)$: $$\begin{aligned}
 S_1[X]^{-1} (X - \mathbb EX)
-&=& \sum_{j=1}^p \langle S_1[X]^{-1} (X - \mathbb EX), S_1[X] h_j \rangle h_j \\
-&=& \sum_{j=1}^p \langle X - \mathbb EX, h_j \rangle h_j \\
+&= \sum_{j=1}^p \langle S_1[X]^{-1} (X - \mathbb EX), S_1[X] h_j \rangle h_j \\
+&= \sum_{j=1}^p \langle X - \mathbb EX, h_j \rangle h_j \\
 S_1[X]^{-1} (X - \mathbb EX)
-&=& \sum_{j=1}^p z_j h_j.
+&= \sum_{j=1}^p z_j h_j.
 \end{aligned}$$ The dual basis $H^*$ of $H$ is the one that satisfies
 $\langle h_j, h^*_{j'} \rangle = \delta_{jj'}$ for all
 $1 \leq j, j' \leq p$ and we know from the definition of ICS that this
 holds for $(S_1[X] h_j)_{1 \leq j \leq p}$. 
 :::
 
-## Code & reproducibility
+## Code & reproducibility {.appendix .unnumbered}
 
 In order to implement coordinate-free ICS, we created the R package
 `ICSFun`, which is used to generate the figures

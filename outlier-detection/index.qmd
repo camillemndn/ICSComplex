@@ -22,11 +22,11 @@ For the scatter operators, we follow the recommendation of
 scatter estimators in the context of a small proportion of outliers, and
 conclude that $(\operatorname{Cov}, \operatorname{Cov}_4)$ is the best
 choice. Thus, we use the empirical scatter pair
-$(\operatorname{Cov}, \operatorname{Cov}_4)$ (see Examples
-[1](#ex:cov)), and compute
-the eigenvalues $\lambda_1 \geq \ldots \geq \lambda_p$, and the
+$(\operatorname{Cov}, \operatorname{Cov}_4)$ (see @exm-cov and @exm-cov4),
+and compute the eigenvalues $\lambda_1 \geq \ldots \geq \lambda_p$, and the
 invariant coordinates $z_{ji}, 1 \leq j \leq p$, for each observation
-$X_i, 1 \leq i \leq n$. As outlined in @sec-icscoord in
+$X_i, 1 \leq i \leq n$. As outlined in @sec-icscoord, for
+a given sample of random complex objects $D_n= \{X_1, \dots, X_n\}$ in
 a Euclidean space $E$, solving the empirical version of ICS is
 equivalent to solving an ICS problem in a multivariate framework [see
 @tyler_invariant_2009] with the coordinates of the objects in a basis
@@ -186,15 +186,14 @@ Southern Vietnam are in red and correspond to indices 1 to 8. We
 consider the following scenarios:
 
 -   the knots are either located at the quantiles of the temperature
-    values (top panel on @fig-vnt_north_south_grid) or equally spaced (bottom panel on @fig-vnt_north_south_grid),
-
+    values (top panel on @fig-vnt_north_south_grid) or equally spaced
+    (bottom panel on @fig-vnt_north_south_grid),
 -   from the left to the right of @fig-vnt_north_south_grid, the
     number of knots varies from 0 to 14 by increments of 2, and then
     takes the values 25 and 35 (overall 10 different values). Note that
     when increasing the number of knots beyond 35, the code returns more
     and more errors due to multicollinearity issues and the results are
     not reported.
-
 -   the base-10 logarithm of the parameter $\lambda$ varies from -8 to 8
     with an increment of 1 on the $x$-axis of each plot.
 
@@ -535,6 +534,7 @@ small.
 #|   density data with 3 generating schemes.
 #| fig-height: 7
 #| message: false
+#| cache.lazy: false
 
 methods <- c(
   "ICS_B2",

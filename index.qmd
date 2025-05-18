@@ -1,4 +1,89 @@
 ---
+title: ICS for complex data with application to outlier detection for density data
+date: today
+date-format: long
+license: CC BY
+author:
+  - name:
+      given: Camille
+      family: Mondon
+    url: https://camillemondon.com
+    email: camille.mondon@tse-fr.eu
+    orcid: 0009-0007-4569-990X
+    roles:
+      - conceptualization
+      - investigation
+      - writing – original draft
+    affiliations:
+      - id: tse
+        name: Toulouse School of Economics
+        department: Mathematics and Statistics
+        address: 1, Esplanade de l'Université
+        city: Toulouse
+        region: Occitanie
+        country: France
+        postal-code: 31000
+        url: https://www.tse-fr.eu/department-mathematics-and-statistics
+  - name:
+      given: Huong Thi
+      family: Trinh
+    url: https://sites.google.com/tmu.edu.vn/huongtrinhthi/home
+    email: trinhthihuong@tmu.edu.vn
+    orcid: 0000-0002-5940-6588
+    roles:
+      - conceptualization
+      - investigation
+      - writing – original draft
+    affiliations:
+      - id: thuongmai
+        name: Thuongmai University
+        department: Faculty of Mathematical Economics
+        city: Hanoi
+        country: Vietnam
+        url: https://tmu.edu.vn/
+  - name:
+      given: Anne
+      family: Ruiz-Gazen
+    url: https://www.tse-fr.eu/fr/people/anne-ruiz-gazen
+    email: anne.ruiz-gazen@tse-fr.eu
+    orcid: 0000-0001-8970-8061
+    roles:
+      - supervision
+      - conceptualization
+      - investigation
+      - writing – original draft
+    affiliations:
+      - ref: tse
+  - name:
+      given: Christine
+      family: Thomas-Agnan
+    url: https://www.tse-fr.eu/fr/people/christine-thomas-agnan
+    email: christine.thomas@tse-fr.eu
+    orcid: 0000-0002-6430-3110
+    roles:
+      - supervision
+      - conceptualization
+      - investigation
+      - writing – original draft
+    affiliations:
+      - ref: tse
+
+abstract: |
+  Invariant coordinate selection (ICS) is a dimension reduction method, used
+  as a preliminary step for clustering and outlier detection.
+  It has been primarily applied to multivariate data.
+  This work introduces a coordinate-free definition of ICS in an abstract
+  Euclidean space and extends the method to complex data.
+  Functional and distributional data are preprocessed into a finite-dimensional subspace.
+  For example, in the framework of Bayes Hilbert spaces, distributional data
+  are smoothed into compositional spline functions through the Maximum
+  Penalised Likelihood method.
+  We describe an outlier detection procedure for complex data and study the
+  impact of some preprocessing parameters on the results.
+  We compare our approach with other outlier detection methods through simulations,
+  producing promising results in scenarios with a low proportion of outliers.
+  ICS allows detecting abnormal climate events in a sample of daily maximum temperature
+  distributions recorded across the provinces of Northern Vietnam between 1987 and 2016.
 keywords:
   - Bayes spaces
   - Distributional data
@@ -97,8 +182,8 @@ paper @dai_functional_2020 and the included references]. Density data
 are constrained functional data, and thus combine the challenges
 associated with both compositional and functional data. The literature
 on outlier detection for density data is very sparse and recent with, as
-far as we know, the papers by @menafoglio_anomaly_2021
-[@lei_functional_2023] and @murph_visualisation_2024 only. Two types of
+far as we know, the papers by @menafoglio_anomaly_2021,
+@lei_functional_2023 and @murph_visualisation_2024 only. Two types of
 outliers have been identified for density data: the horizontal-shift
 outliers and the shape outliers, with shape outliers being again more
 challenging to detect [see @lei_functional_2023 for details]. The
@@ -140,3 +225,10 @@ years. @sec-conclusion concludes the paper and offers some
 perspectives. Supplementary material on ICS, a reminder on Bayes spaces,
 as well as proofs of the propositions and corollaries are given in the
 Appendix.
+
+{{< include ics/index.qmd >}}
+{{< include outlier-detection/index.qmd >}}
+{{< include application/index.qmd >}}
+{{< include conclusion/index.qmd >}}
+{{< include acknowledgements/index.qmd >}}
+{{< include appendix/index.qmd >}}
