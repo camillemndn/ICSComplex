@@ -59,8 +59,8 @@ non-increasing real sequence
 $\Lambda = (\lambda_1 \geq \ldots \geq \lambda_p)$ such that
 $$
 \operatorname{ICS} (X,{S_1},{S_2}) : \left\{ \begin{array}{lcl}
-\langle{S_1} [X] h_j, h_{j'} \rangle &=& \delta_{jj'} \\
-\langle{S_2} [X] h_j, h_{j'} \rangle &=& \delta_{jj'} \lambda_j
+\langle{S_1} [X] h_j, h_{j'} \rangle &= \delta_{jj'} \\
+\langle{S_2} [X] h_j, h_{j'} \rangle &= \delta_{jj'} \lambda_j
 \end{array} \text{ for all } 1 \leq j,j' \leq p, \right.
 $${#eq-icsdef} where
 $\delta_{jj'}$ equals $1$ if $j=j'$ and $0$ otherwise. Such a basis $H$
@@ -159,7 +159,7 @@ For any measurable function $w: \mathbb R^+ \rightarrow \mathbb R$, let
 $$
 \mathcal E_w = \left\{ X \in L^2 (\Omega, E) \left| \, \operatorname{Cov}[X] \in \mathcal{GL}(E) \\
 \text{ and } w \left( \left\| \operatorname{Cov}[X]^{-1/2} (X - \mathbb EX) \right\| \right) \| X - \mathbb EX \| \in L^2 (\Omega, \mathbb R) \right. \right\}.
-$${#eq-covw}
+$$
 Note that $\mathcal E_w$ is an affine invariant set of integrable
 $E$-valued random objects. For $X \in \mathcal E_w$, we define the
 $w$-weighted covariance operator $\operatorname{Cov}_w [X]$ by

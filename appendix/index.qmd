@@ -161,10 +161,10 @@ $L^2_0$ and $B^2$ are defined are omitted from some notations.
 For a random density $f(.)$ in the infinite-dimensional space
 ${B}^2(a,b)$, the expectation and covariance operators can be defined as
 follows, whenever they exist: $$\begin{aligned}
-\mathbb{E}^{B^2} [ f ] &=& \operatorname{clr}^{-1} \mathbb{E} [ \operatorname{clr} f] \in {B}^2 (a,b) \\
-\operatorname{Cov}^{B^2} [f] g &=& \mathbb{E}^{B^2} \left[ \langle f \ominus \mathbb{E}^{B^2} [ f ], g \rangle_{B^2} \odot ( f \ominus \mathbb{E}^{B^2} [ f ]) \right] \nonumber \\
-&=& \operatorname{clr}^{-1}\mathbb{E} [ \langle f, g \rangle_{B^2} \operatorname{clr}f ]  \nonumber \\
-&=& \operatorname{clr}^{-1}\mathbb{E} [ \langle \operatorname{clr}f, \operatorname{clr} g \rangle_{{ L}^2_0} \operatorname{clr}f ] \quad \text{ for any } g \in B^2(a,b),
+\mathbb{E}^{B^2} [ f ] &= \operatorname{clr}^{-1} \mathbb{E} [ \operatorname{clr} f] \in {B}^2 (a,b) \\
+\operatorname{Cov}^{B^2} [f] g &= \mathbb{E}^{B^2} \left[ \langle f \ominus \mathbb{E}^{B^2} [ f ], g \rangle_{B^2} \odot ( f \ominus \mathbb{E}^{B^2} [ f ]) \right] \nonumber \\
+&= \operatorname{clr}^{-1}\mathbb{E} [ \langle f, g \rangle_{B^2} \operatorname{clr}f ]  \nonumber \\
+&= \operatorname{clr}^{-1}\mathbb{E} [ \langle \operatorname{clr}f, \operatorname{clr} g \rangle_{{ L}^2_0} \operatorname{clr}f ] \quad \text{ for any } g \in B^2(a,b),
 \end{aligned}$${#eq-covw2} where $\ominus$ is the negative perturbation defined by
 $f \ominus g = f \oplus [(-1) \odot g]$.
 

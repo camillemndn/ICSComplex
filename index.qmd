@@ -96,6 +96,9 @@ keywords:
   - 62R10
   - 62G07
   - 65D07
+citation:
+  type: article-journal
+  container-title: Journal of Multivariate Analysis
 ---
 
 # Introduction

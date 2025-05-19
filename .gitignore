@@ -62,6 +62,8 @@ _book
 _manuscript
 /.quarto/
 *.nc
+*_libs
 
 result*
 .pre-commit-config.yaml
+*.sty
