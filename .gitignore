@@ -66,4 +66,4 @@ _manuscript
 
 result*
 .pre-commit-config.yaml
-*.sty
+/*.sty
