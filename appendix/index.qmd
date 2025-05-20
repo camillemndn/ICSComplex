@@ -1,3 +1,5 @@
+# Appendix {.appendix .unnumbered}
+
 ## Scatter operators for random objects in a Hilbert space {.appendix .unnumbered}
 
 Let us first discuss some definitions relative to scatter operators in

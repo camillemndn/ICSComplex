@@ -1,4 +1,4 @@
-## Acknowledgments {.appendix .unnumbered}
+# Acknowledgments {.appendix .unnumbered}
 
 The major part of this work was completed while the authors were
 visiting the Vietnam Institute for Advanced Study in Mathematics (VIASM)
