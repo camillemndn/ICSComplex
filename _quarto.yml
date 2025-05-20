@@ -1,7 +1,5 @@
 project:
   type: manuscript
-  resources:
-    - images
 
 bibliography: references.bib
 cache: true
