@@ -13,8 +13,8 @@ let
               src = pkgs.fetchFromGitHub {
                 owner = "camillemndn";
                 repo = "dda";
-                rev = "v0.0.0.9016";
-                hash = "sha256-sHaRvP9rCPW7DO7zvFYkQNZpePplacGOYrTpFibm6Lw=";
+                rev = "v0.0.0.9017";
+                hash = "sha256-MOQNNQgOZOss7zfCDy0oBzfOYYTs5zl6M/ltOdnYHvI=";
               };
               propagatedBuildInputs = [
                 fda
@@ -105,6 +105,7 @@ rec {
         image_optim,
         quarto,
         texliveFull,
+        which,
         ...
       }:
 
@@ -116,17 +117,18 @@ rec {
           image_optim
           (quarto.override { extraRPackages = r-deps; })
           texliveFull
+          which
         ];
 
         HOME = ".";
 
         buildPhase = ''
-          quarto render
-          image_optim --recursive _book
+          quarto render --to html
+          image_optim --recursive _manuscript
         '';
 
         installPhase = ''
-          cp -r _book $out
+          cp -r _manuscript $out
         '';
       }
     ) { };
